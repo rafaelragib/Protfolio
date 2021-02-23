@@ -1,5 +1,9 @@
 import React from 'react'
 import styled, { css } from "styled-components"
+import { VscGithub } from 'react-icons/vsc';
+import { FaLinkedin } from 'react-icons/fa';
+
+
 
 
 
@@ -7,14 +11,22 @@ const Header= () =>
 (
     <Main>
         <SubMain>
-        <Container>
-        <Columns>
-        <Column>
-        <h1>Ragib Un Nur</h1>
-        <H2>CSE Graduate</H2>
-        </Column>
-        </Columns>
-    </Container>
+            <Container>
+                <Columns>
+                    <Column>
+                        <H1>Ragib Un Nur</H1>
+                        <H2>CSE Graduate</H2>
+                    </Column>
+                </Columns>
+                <Icons>
+                    <Icon href="https://github.com/rafaelragib">
+                        <VscGithub  size={60} />
+                    </Icon>
+                    <Icon href="https://github.com/https://www.linkedin.com/in/ragibunnur/">
+                        <FaLinkedin size={60} />
+                    </Icon>
+                </Icons>
+            </Container>
         </SubMain>
     </Main>
     
@@ -23,6 +35,16 @@ const Header= () =>
 
 
 export default Header;
+const Icons = styled.div `
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;`;
+
+const Icon = styled.a `
+    color:white;    
+    width:70px;`;
+
 
 const Main = styled.section `
     background-color: #454545;
@@ -55,7 +77,11 @@ const Column= styled.div`
     padding: .75rem;`;
 
 const H2= styled.div`
-    margin-top: -1.25rem;`;
+    margin-top: .03em;
+    font-size:3em`;
+
+const H1= styled.div`
+    font-size: 5em;`;
     
 
         
