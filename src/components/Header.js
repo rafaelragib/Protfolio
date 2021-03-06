@@ -9,7 +9,7 @@ import { FaLinkedin } from 'react-icons/fa';
 
 const Header= () =>
 (
-    <Main>
+    <Main id="header">
         <SubMain>
             <Container>
                 <Columns>
@@ -35,6 +35,7 @@ const Header= () =>
 
 
 export default Header;
+
 const Icons = styled.div `
 display: flex;
 flex-wrap: wrap;
