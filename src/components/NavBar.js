@@ -1,12 +1,27 @@
 import React from 'react'
 import styled, { css } from "styled-components";
-
+import { Link, animateScroll as scroll } from "react-scroll";
 const NavBar =() =>
 (
     <Nav>
-        <Anchor>Projects</Anchor>
+        <Anchor>
+        <Link
+            activeClass="active"
+            to="header"
+            smooth={true}
+            offset={-70}
+            duration={500}>Projects
+        </Link>
+        </Anchor>
         <Anchor>Resume</Anchor>
-        <Anchor>About</Anchor>
+        <Anchor>
+        <Link
+            activeClass="active"
+            to="aboutme"
+            smooth={true}
+            offset={-70}
+            duration={500}>
+        </Link>About</Anchor>
         <Anchor>Skills</Anchor>
     </Nav>
 );
@@ -17,7 +32,7 @@ const Nav= styled.div`
     overflow: hidden;
     position: sticky;
     top: 0;`;
-const Anchor= styled.a`
+const Anchor= styled.div`
     float: left;
     color: #f2f2f2;
     text-align: center;
