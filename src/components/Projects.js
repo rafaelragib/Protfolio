@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-
+import ProjectCard from './ProjectCard'
+import "./Projects.css"
 
 const API="https://api.github.com/users/rafaelragib/repos";
-
+const specific=["AustPc-Portal","budget_app"];
 
 const project_details = {
     name: null,
@@ -16,14 +17,15 @@ const project_details = {
 
 const Projects=() => {
 
-const [projectDetails,setProjectDetails]=useState([]);
+    const [projectDetails,setProjectDetails]=useState([{}]);
 
-const fetchData= async () =>
-{
-    const response= await axios.get(API);
-    const len=response.data.length; 
-    let specific=["AustPc-Portal","budget_app"];
+    const fetchData=    useCallback( async () =>
+    {
+    //const response= await axios.get(API);
+    //const len=response.data.length; 
+    
     let repoList=[];
+    //repoList = [...response.data.slice(0, len)];
     for(let repoName of specific)
     {
         const projects= await axios.get(`https://api.github.com/repos/rafaelragib/${repoName}`);
@@ -31,13 +33,13 @@ const fetchData= async () =>
     }
 
     
-    //console.log(response);
+    //console.log(repoList);
 
     
     //repoList=[...response.data.slice(0, len)];
     //console.log(repoList);
     setProjectDetails(repoList);
-}
+    },[specific]);
 
     useEffect(()=>{
         fetchData();
@@ -47,14 +49,13 @@ const fetchData= async () =>
     //console.log(typeof projectDetails);
     return (  
         
-    <div>
+    <div className="row">
     {
         
         projectDetails.map((project,index) => (
             
-            <div>
-               {index} 
-            </div>
+           <ProjectCard key={index} name={project.name}/>
+               
         ))
     }
     </div>

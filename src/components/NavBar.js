@@ -4,7 +4,7 @@ import './NavBar.css'
 import { Link, animateScroll as scroll } from "react-scroll";
 const NavBar =() =>
 (
-    <div>
+    <div className="nav">
         
         <Link
             className="links"
@@ -15,7 +15,6 @@ const NavBar =() =>
         </Link>
         <Link
           className="links"
-            activeClass="active"
             to="aboutMe"
             smooth={true}
             offset={-70}
