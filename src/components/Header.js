@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from "styled-components"
 import { VscGithub } from 'react-icons/vsc';
 import { FaLinkedin } from 'react-icons/fa';
-
+import { IoDocument } from "react-icons/io5";
 
 
 
@@ -26,6 +26,16 @@ const Header= () =>
                         <FaLinkedin size={60} />
                     </Icon>
                 </Icons>
+                
+                <Columns>
+                <Column >
+                <ResumeButton>
+                <IoDocument size={30}/>
+                Resume
+                </ResumeButton>
+                
+                </Column>
+                </Columns>
             </Container>
         </SubMain>
     </Main>
@@ -35,6 +45,9 @@ const Header= () =>
 
 
 export default Header;
+
+const ResumeButton = styled.div`
+margin-top:30px;`;
 
 const Icons = styled.div `
 display: flex;
@@ -65,9 +78,6 @@ const Columns= styled.div`
     
     position: relative;
     width: auto;
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-    margin-top: -.75rem;
     text-align: center!important;`;
 
 const Column= styled.div`

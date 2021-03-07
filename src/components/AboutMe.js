@@ -5,7 +5,7 @@ import styled, { css } from "styled-components"
 const AboutMe = () =>
 (
 
-    <Main id="header">
+    <Main id="aboutMe">
         <SubMain>
             <Container>
                 <Columns>
@@ -20,6 +20,7 @@ const AboutMe = () =>
                             I look forward to start my career in a meaningful and challenging position that allows me to utilize my programming, database, 
                             and management skills for the growth of the organization as well as to improve my knowledge of current software industry trends. 
                         </Paragraph>
+
                     </Column>
                 </Columns>
             </Container>
