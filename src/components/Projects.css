@@ -1,0 +1,19 @@
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.heading
+{
+    padding: 3rem 5rem;
+}

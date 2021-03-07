@@ -1,50 +1,39 @@
-import React from 'react'
+import React from "react"
 import styled, { css } from "styled-components"
 import { VscGithub } from 'react-icons/vsc';
 import { FaLinkedin } from 'react-icons/fa';
-import { IoDocument } from "react-icons/io5";
-
-
-
-
-const Header= () =>
+import {AiFillMail} from "react-icons/ai";
+const Contacts= () =>
 (
-    <Main id="header">
+    <Main id="contacts">
         <SubMain>
             <Container>
                 <Columns>
                     <Column>
-                        <H1>Ragib Un Nur</H1>
-                        <H2>CSE Graduate</H2>
+                        <H2>Get In Touch</H2>
+                        <p> </p>
                     </Column>
                 </Columns>
                 <Icons>
                     <Icon href="https://github.com/rafaelragib">
                         <VscGithub  size={60} />
+
+                    </Icon>
+                    <Icon href="mailto:ragib.un.nur@gmail.com">
+                        <AiFillMail  size={60} />
                     </Icon>
                     <Icon href="https://github.com/https://www.linkedin.com/in/ragibunnur/">
                         <FaLinkedin size={60} />
                     </Icon>
                 </Icons>
                 
-                <Columns>
-                <Column >
-                <ResumeButton>
-                <IoDocument size={30}/>
-                Resume
-                </ResumeButton>
                 
-                </Column>
-                </Columns>
             </Container>
         </SubMain>
     </Main>
-    
-);
+)
 
-
-
-export default Header;
+export default Contacts;
 
 const ResumeButton = styled.div`
 margin-top:30px;`;
@@ -94,5 +83,3 @@ const H2= styled.div`
 const H1= styled.div`
     font-size: 5em;`;
     
-
-        
