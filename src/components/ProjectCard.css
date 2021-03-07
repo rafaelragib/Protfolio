@@ -9,3 +9,13 @@
     text-align: center;
     background-color: #f1f1f1;
 }  
+.badge {
+  display: inline-block;
+  min-width: 16px; /* pixel unit */
+  padding: 20px 20px; /* pixel unit */
+  border-radius: 50%;
+  font-size: 15px;
+  text-align: center;
+  background: #1779ba;
+  color: #fefefe;
+}

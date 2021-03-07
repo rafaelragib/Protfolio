@@ -3,11 +3,13 @@ import "./ProjectCard.css"
 
 const ProjectCard = (props) =>
 (
-    <div class="column">
-    <div class="card">
-      <h3>Card 1</h3>
+    <div className="column">
+    <div className="card">
+      <h2>{props.name}</h2>
       <p>Some text</p>
       <p>Some text</p>
+      <span className="badge">Java:85%</span>
+      <span className="badge">JavaScript:30%</span>
     </div>
   </div>    
     

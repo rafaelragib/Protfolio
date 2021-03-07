@@ -21,6 +21,31 @@ const NavBar =() =>
             duration={500}>
         About
         </Link>
+        <Link
+          className="links"
+            to="projects"
+            smooth={true}
+            offset={-70}
+            duration={500}>
+        Project
+        </Link>
+        <Link
+          className="links"
+            to="skills"
+            smooth={true}
+            offset={-70}
+            duration={500}>
+        Skills
+        </Link>
+        <Link
+          className="links"
+            to="contacts"
+            smooth={true}
+            offset={-70}
+            duration={500}>
+        Contact
+        </Link>
+        
     </div>
 );
 

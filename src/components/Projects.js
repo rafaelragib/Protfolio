@@ -18,18 +18,22 @@ const project_details = {
 const Projects=() => {
 
     const [projectDetails,setProjectDetails]=useState([{}]);
-
-    const fetchData=    useCallback( async () =>
+    const [projectLanguage,setProjectLanguage]=useState([{}]);
+    
+    const fetchData= useCallback( async () =>
     {
     //const response= await axios.get(API);
     //const len=response.data.length; 
     
     let repoList=[];
+    let languageList=[];
     //repoList = [...response.data.slice(0, len)];
     for(let repoName of specific)
     {
         const projects= await axios.get(`https://api.github.com/repos/rafaelragib/${repoName}`);
+        const language=await axios.get(`https://api.github.com/repos/rafaelragib/${repoName}/languages`)
         repoList.push(projects.data);
+        languageList.push(language.data);
     }
 
     
@@ -39,6 +43,9 @@ const Projects=() => {
     //repoList=[...response.data.slice(0, len)];
     //console.log(repoList);
     setProjectDetails(repoList);
+    setProjectLanguage(languageList);
+    console.log(languageList);
+
     },[specific]);
 
     useEffect(()=>{
@@ -48,16 +55,20 @@ const Projects=() => {
    
     //console.log(typeof projectDetails);
     return (  
-        
+        <div className="heading" id="projects">
+        <h1 >
+            Projects
+        </h1>    
     <div className="row">
     {
         
         projectDetails.map((project,index) => (
             
-           <ProjectCard key={index} name={project.name}/>
+           <ProjectCard key={index} name={project.name} desc={project.description} language={project.language}/>
                
         ))
     }
+    </div>
     </div>
     );
 };

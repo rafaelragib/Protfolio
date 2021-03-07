@@ -3,6 +3,8 @@ import NavBar from './NavBar'
 import Header from './Header'
 import AboutMe from './AboutMe'
 import Projects from './Projects'
+import Skills from './Skills'
+import Contacts from './Contacts'
 
 const Body = () =>
 (
@@ -10,7 +12,9 @@ const Body = () =>
       <NavBar/>
       <Header  />
       <AboutMe />
-      <Projects/>  
+      <Projects/>
+      <Skills/>
+      <Contacts/>
     </div>
 );
 

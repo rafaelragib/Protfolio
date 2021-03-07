@@ -13,3 +13,7 @@
   display: table;
   clear: both;
 }
+.heading
+{
+    padding: 3rem 5rem;
+}
